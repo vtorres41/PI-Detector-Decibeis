@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <script src="auth.js"></script>
+  <script src="guard.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Protótipo do Identificador de Decibéis em Cidades, projeto acadêmico da Orion Prime.">
+  <title>Identificador de Decibéis em Cidades — EloEspect</title>
+  <link rel="icon" type="image/png" href="assets/projeto-identificador.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script src="project.js" defer></script>
+</head>
+<body class="project-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="index.html" aria-label="Orion Prime — página inicial"><span class="wordmark-orion">ORION</span><span class="wordmark-prime">PRIME<span class="brand-dot">.</span></span></a>
+      <span class="project-header-note">EloEspect <strong>/ PROJETO</strong></span>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu"><span></span><span></span></button>
+      <nav  class="main-nav" id="main-nav"  aria-label="Navegação principal"  > <button class="nav-sair" type="button" id="btn-sair">SAIR</button>
+        <a href="#proposta">O QUE É?</a><a href="index.html#criadores">INTEGRANTES</a><a href="#prototipo">PROTÓTIPO</a><a class="nav-cta" href="index.html">ORION PRIME<span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="project-hero container">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line" style="background:#0867b8"></span> PROJETO EloEspect · 2026</p>
+        <h1><span><strong>E l o E s p e c t</strong></span><br>Identificador de <span>Decibéis</span> em Cidades</h1>
+        <p class="project-hero-copy">Uma proposta de software para apresentar informações sobre o ruído em ambientes urbanos e auxiliar pessoas com Transtorno do Espectro Autista (TEA) e pessoas com problemas auditivos a compreender melhor os espaços ao redor</p>
+        <a class="button button-blue" href="#prototipo">Experimentar o protótipo <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="project-hero-art"><img src="assets/projeto-identificador.svg" alt="Escudo azul do Identificador de Decibéis em Cidades, com símbolo colorido de quebra-cabeça"><div class="project-art-label"><span>INFORMAÇÃO AMBIENTAL</span><span>PROTÓTIPO WEB</span></div></div>
+    </section>
+
+    <div class="project-strip"><div class="container ticker-inner"><span>INFORMAÇÃO SOBRE RUÍDO</span><span class="ticker-symbol">●</span><span>INTERFACE WEB RESPONSIVA</span><span class="ticker-symbol">●</span><span>ACESSIBILIDADE</span><span class="ticker-symbol">●</span><span>DADOS ORGANIZADOS</span></div></div>
+
+    <section class="project-content container" id="proposta">
+      <div class="project-intro-grid">
+        <div><p class="eyebrow">01 / A PROPOSTA</p><h2>Entender o ambiente<br><span>Um Aparelho capaz de mudar <strong>VIDAS</strong></span></h2></div>
+        <p class="project-intro-text">O projeto propõe uma forma simples de visualizar a intensidade sonora de um local. A informação pode ajudar o usuário a reconhecer ambientes mais silenciosos ou ruidosos e planejar melhor sua permanência neles. Nesta versão, o navegador captura o áudio do microfone e exibe uma leitura experimental do sinal. O protótipo não substitui um medidor acústico calibrado</p>
+      </div>
+      <div class="project-feature-grid">
+        <article class="project-feature"><span class="project-feature-number">01 / CAPTURA</span><h3>Leitura de áudio</h3><p>Com autorização do usuário, o navegador analisa o sinal recebido pelo microfone do dispositivo</p></article>
+        <article class="project-feature"><span class="project-feature-number">02 / VISUALIZAÇÃO</span><h3>Nível apresentado com clareza</h3><p>Um indicador visual mostra a intensidade relativa do sinal e uma classificação orientativa</p></article>
+        <article class="project-feature"><span class="project-feature-number">03 / HISTÓRICO</span><h3>Registro das leituras</h3><p>Quando o servidor e o banco de dados estão configurados, uma leitura pode ser guardada com o nome do local informado pelo usuário</p></article>
+      </div>
+    </section>
+
+    <section class="prototype-section" id="prototipo">
+      <div class="container">
+        <div class="prototype-heading"><div><p class="eyebrow">02 / PROTÓTIPO INTERATIVO</p><h2>Teste a leitura do ambiente</h2></div><p>Permita o acesso ao microfone para acompanhar uma leitura experimental. Use o botão de encerrar para salvar um registro no histórico, quando a API e o MySQL estiverem conectados</p></div>
+        <div class="meter-layout">
+          <section class="meter-card" aria-labelledby="meter-title">
+            <div class="meter-card-top"><h3 id="meter-title">Leitura do microfone</h3><span class="live-status" id="live-status"><i></i><span>Desativado</span></span></div>
+            <label for="local-input" class="field-label" style="display:block;font-size:10px;color:#71828d;font-weight:750;margin-bottom:7px">LOCAL DA LEITURA (OPCIONAL)</label>
+            <input id="local-input" type="text" maxlength="100" placeholder="Ex.: praça central, rua ou terminal" style="width:100%;border:1px solid #dce5ea;padding:12px 13px;color:#263f50;outline-color:#0867b8;border-radius:2px;font-size:12px;margin-bottom:12px">
+            <div class="meter-reading"><output class="meter-value" id="meter-value">—</output><span class="meter-unit">dBFS</span></div>
+            <p class="meter-level-label" id="meter-level-label">Aguardando início da medição</p>
+            <div class="meter-track" role="meter" aria-label="Intensidade relativa do sinal de áudio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="meter-track"><span class="meter-indicator" id="meter-indicator"></span></div>
+            <div class="meter-scale"><span>Menor sinal</span><span>Maior sinal</span></div>
+            <div class="meter-actions"><button class="button button-blue" id="start-button" type="button">Iniciar medição <span aria-hidden="true">▶</span></button><button class="button button-outline" id="stop-button" type="button" disabled>Encerrar e salvar</button></div>
+            <p class="meter-help">O navegador solicitará permissão para usar o microfone. A leitura é relativa ao sinal digital e varia com o aparelho, a distância e o ganho do microfone.</p>
+            <div class="meter-message" id="meter-message" role="status" aria-live="polite">Pronto para iniciar. A leitura não é uma medição acústica calibrada em dB SPL.</div>
+          </section>
+          <section class="history-card" aria-labelledby="history-title"><h3 id="history-title">Registros recentes</h3><p class="history-intro">Leituras salvas no banco de dados deste projeto.</p><div class="history-list" id="history-list"><div class="history-empty">O histórico aparecerá aqui após o servidor e o banco de dados serem configurados.</div></div></section>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack-section container">
+      <div class="stack-heading"><div><p class="eyebrow">03 / ESTRUTURA TÉCNICA</p><h2>Como o protótipo EloEspect funciona?</h2></div><p>A aplicação separa a interface, as regras de negócio e o armazenamento. Essa estrutura facilita testar, manter e ampliar o projeto.</p></div>
+      <div class="stack-grid">
+        <article class="stack-item"><span class="stack-abbr">HTML</span><h3>Estrutura</h3><p>Organização semântica das páginas.</p></article>
+        <article class="stack-item"><span class="stack-abbr">CSS</span><h3>Interface</h3><p>Layout responsivo para desktop e celular.</p></article>
+        <article class="stack-item"><span class="stack-abbr">JS</span><h3>Captura de áudio</h3><p>Leitura do sinal com Web Audio API.</p></article>
+        <article class="stack-item"><span class="stack-abbr">Node.js</span><h3>Servidor e POO</h3><p>API REST e classes para as regras da aplicação.</p></article>
+        <article class="stack-item"><span class="stack-abbr">MySQL</span><h3>Banco de dados</h3><p>Armazenamento das leituras registradas.</p></article>
+      </div>
+      <div class="technical-note"><span class="note-i">i</span><div><strong>Limite técnico e evolução</strong><p>O navegador mede dBFS (nível relativo do sinal digital), não dB SPL calibrado. Para medir ruído ambiental com precisão, será necessário calibrar os microfones ou integrar um sensor acústico apropriado. O servidor usa uma API REST e configuração por variáveis de ambiente, facilitando uma futura implantação em nuvem; a conexão com sensores IoT externos pode ser adicionada como próxima etapa.</p></div></div>
+    </section>
+
+    <section class="closing-section"><div class="container closing-inner"><div><p class="eyebrow">ORION PRIME · EloEspect · PROJETO ACADÊMICO</p><h2>Informações claras e eficácia<br><span>para ambientes mais aconchegantes</span></h2></div><a class="button button-yellow" href="index.html#criadores">Conhecer os criadores <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="footer-wordmark" href="index.html"><span>EloEspect</span><strong></strong></a><p>Identificador de Decibéis em Cidades</p><a class="back-top" href="#conteudo">Voltar ao topo ↑</a><small>© <span data-current-year>2026</span> Orion Prime - EloEspect - Projeto acadêmico.</small></div></footer>
+</body>
+</html>

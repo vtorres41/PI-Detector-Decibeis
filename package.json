@@ -1,0 +1,21 @@
+{
+  "name": "orion-prime",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site institucional Orion Prime e protótipo web do Identificador de Decibéis em Cidades.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.14.0"
+  }
+}

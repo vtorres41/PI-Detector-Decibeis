@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar - Orion Prime</title>
+  <link rel="icon" type="image/svg+xml" href="assets/orion-prime-logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="login.css">
+  <script src="auth.js" defer></script>
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <aside class="auth-brand">
+      <span class="auth-brand-name">ORION<strong>PRIME</strong></span>
+      <div class="auth-brand-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> ÁREA RESTRITA · 2026</p>
+        <h1>Informações claras e eficácia <span>para ambientes mais aconchegantes</span></h1>
+        <p class="auth-brand-text">Entre para acessar o EloEspect, o identificador de decibéis que ajuda pessoas com TEA e pessoas com problemas auditivos a entender melhor os espaços ao redor.</p>
+      </div>
+      <span class="auth-brand-foot">PROJETO ACADÊMICO · ELOESPECT</span>
+    </aside>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <a href="index.html" aria-label="Site do grupo Orion Prime"><img class="auth-logo" src="assets/orion-prime-logo.svg" alt="Logotipo Orion Prime"></a>
+        <p class="auth-subtitle">Acesse o protótipo EloEspect</p>
+
+        <div class="auth-tabs" role="tablist" aria-label="Acesso">
+          <button class="auth-tab is-active" type="button" role="tab" data-aba="entrar" aria-selected="true">Entrar</button>
+          <button class="auth-tab" type="button" role="tab" data-aba="cadastro" aria-selected="false">Criar conta</button>
+        </div>
+
+        <form class="auth-form" id="form-entrar">
+          <div class="auth-field">
+            <label for="entrar-email">E-mail</label>
+            <input id="entrar-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com" required>
+          </div>
+          <div class="auth-field">
+            <label for="entrar-senha">Senha</label>
+            <div class="auth-senha">
+              <input id="entrar-senha" name="senha" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+              <button class="auth-toggle-senha" type="button" aria-label="Mostrar senha"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="auth-row">
+            <label class="auth-check"><input type="checkbox" name="lembrar"> Manter conectado</label>
+            <button class="auth-link" type="button" id="esqueci-senha">Esqueci a senha</button>
+          </div>
+          <button class="auth-submit" type="submit">Entrar</button>
+        </form>
+
+        <form class="auth-form" id="form-cadastro" hidden>
+          <div class="auth-field">
+            <label for="cad-nome">Nome completo</label>
+            <input id="cad-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" minlength="2" maxlength="100" required>
+          </div>
+          <div class="auth-field">
+            <label for="cad-email">E-mail</label>
+            <input id="cad-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com" maxlength="150" required>
+          </div>
+          <div class="auth-field">
+            <label for="cad-senha">Senha</label>
+            <div class="auth-senha">
+              <input id="cad-senha" name="senha" type="password" autocomplete="new-password" placeholder="Mínimo de 8 caracteres" minlength="8" maxlength="72" required>
+              <button class="auth-toggle-senha" type="button" aria-label="Mostrar senha"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="auth-field">
+            <label for="cad-confirmar">Confirmar senha</label>
+            <div class="auth-senha">
+              <input id="cad-confirmar" name="confirmar" type="password" autocomplete="new-password" placeholder="Repita a senha" minlength="8" maxlength="72" required>
+              <button class="auth-toggle-senha" type="button" aria-label="Mostrar senha"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+          <button class="auth-submit" type="submit">Criar conta</button>
+        </form>
+
+        <p class="auth-message" id="auth-mensagem" role="alert" aria-live="polite"></p>
+        <a class="auth-back" href="index.html">← Voltar ao site da Orion Prime</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
