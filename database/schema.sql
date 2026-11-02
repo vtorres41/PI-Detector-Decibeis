@@ -26,3 +26,4 @@ CREATE TABLE IF NOT EXISTS usuarios (
 ) ENGINE=InnoDB;
 
 SELECT id, nome, email, senha_hash FROM usuarios;
+
